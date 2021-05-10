@@ -40,7 +40,7 @@ In this project, contains 4 user-roles. Each users key features and functionalit
 - search clinic & doctor with filter
 - rate and review
 
-**Notes** : *for patient, no web based support only available at mobile based. Please checkout [here - Mobile-Based Clinic Appointment System](https://github.com/yh-ong/Mobile-Based-Clinic-Appointment-System)*
+**Notes** : *for patient, no web based support only available at mobile based. Please checkout [here - Mobile-Based Clinic Appointment System](https://github.com/HariSankarNayak/hospital-hybrid)*
 
 ## Technology
 Clinic ME uses a number of technology to work properly:
