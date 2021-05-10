@@ -1,6 +1,6 @@
 # Web-Based Clinic Appointment System
 
-**Notes** : *for patient, no web based support only available at mobile based. Please checkout [here - Mobile-Based Clinic Appointment System](https://github.com/yh-ong/Mobile-Based-Clinic-Appointment-System)*
+**Notes** : *for patient, no web based support only available at mobile based. Please checkout [here - Mobile-Based Clinic Appointment System](https://github.com/HariSankarNayak/hospital-hybrid)*
 
 [TOC]
 
