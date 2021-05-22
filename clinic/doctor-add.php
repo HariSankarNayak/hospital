@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $classYears = $error_html['errClass'];
         }
     }
-    
+
     if (empty($fees)) {
         $errFee = $error_html['errFee'];
         $classFee = $error_html['errClass'];
@@ -102,7 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $classContact = $error_html['errClass'];
         }
     }
-
 }
 ?>
 <!DOCTYPE html>
@@ -235,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <?php $i = 1;
                                     foreach ($select_lang as $lang_value) {
                                         echo
-                                            '<div class="col">
+                                        '<div class="col">
                                             <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="inputLanguages[]" id="customCheck' . $i . '" class="custom-control-input ' . $classSpoke . '" value="' . $lang_value . '">
                                             <label class="custom-control-label" for="customCheck' . $i . '">' . $lang_value . '</label>
@@ -318,7 +317,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $('#inputAge').val(totalyear);
         });
 
-        $('#inputIC').on('keyup', function() {
+        $('#inputGender').on('keyup', function() {
             var input = $(this).val(),
                 lastnum = input % 10;
             if (lastnum % 2 === 0) {
@@ -370,11 +369,11 @@ if (isset($_POST["savebtn"])) {
         if ($stmt->execute()) {
 
             $last_id = $conn->insert_id;
-            mysqli_query($conn,"INSERT INTO treatment_type (treatment_name, doctor_id) VALUES ('New Patient', $last_id) ");
+            mysqli_query($conn, "INSERT INTO treatment_type (treatment_name, doctor_id) VALUES ('New Patient', $last_id) ");
 
             $selector = bin2hex(random_bytes(8));
             $validator = random_bytes(32);
-            $link = $_SERVER["SERVER_NAME"] . "/doclab/doctor/activate.php?selector=".$selector."&validator=". bin2hex($validator);
+            $link = $_SERVER["SERVER_NAME"] . "/doclab/doctor/activate.php?selector=" . $selector . "&validator=" . bin2hex($validator);
             $expries = date("U") + 86400; // one day
 
             $delstmt = $conn->prepare("DELETE FROM doctor_reset WHERE reset_email = ?");

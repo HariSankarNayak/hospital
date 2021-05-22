@@ -2,7 +2,7 @@
 $mail = array(
 	"con_subject" => "Confirmation for Appointment",
 	"con_title" => "Thanks for registering",
-	"con_content"=> "Hi, (Appointment Name), <br> Appointment confirmed with (Doctor Name) on (Wednesday, December 27, 2019) at (5:30PM).",
+	"con_content" => "Hi, (Appointment Name), <br> Appointment confirmed with (Doctor Name) on (Wednesday, December 27, 2019) at (5:30PM).",
 	"con_button" => NULL,
 
 	"acc_subject" => "Activate Clinic Me Account",
@@ -22,7 +22,7 @@ function sendmail($to, $subject, $title, $content, $button, $link, $token)
 	if (isset($button) && isset($link)) {
 		$button_area =  '
 		<tr><td style="padding: 20px 0 20px 0; font-family: Arial, sans-serif;" align="center">
-			<a href="'.$link.'" target="_blank" style="padding: 8px 20px;border: 1px solid #ffffff;border-radius: 6px; color: #716df9; background-color: #ffffff; text-decoration: none; font-weight: bold;">
+			<a href="' . $link . '" target="_blank" style="padding: 8px 20px;border: 1px solid #ffffff;border-radius: 6px; color: #716df9; background-color: #ffffff; text-decoration: none; font-weight: bold;">
 				' . $button . '
 			</a>
 		</td></tr>';
@@ -32,7 +32,7 @@ function sendmail($to, $subject, $title, $content, $button, $link, $token)
 	if (isset($token) && $token != "") {
 		$token_area = '
 		<tr><td align="center" style="padding: 10px 0 30px 0; color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
-				<strong> Here is your 6 digit number: '.$token.'</strong>
+				<strong> Here is your 6 digit number: ' . $token . '</strong>
 			</td></tr>';
 		// $token_area = "Here is your 6 digit number: ". $token;
 	}
@@ -61,17 +61,17 @@ function sendmail($to, $subject, $title, $content, $button, $link, $token)
 								
 								<tr>
 									<td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 24px;">
-										<b>'.$title.'</b>
+										<b>' . $title . '</b>
 									</td>
 								</tr>
 								<tr>
 									<td style="padding: 20px 0 30px 0; color: #ffffff; font-family: Arial, sans-serif; font-size: 21px; line-height: 20px;">
-										'.$content.'
+										' . $content . '
 									</td>
 								</tr>
-								'.$token_area.'
+								' . $token_area . '
 
-								'.$button_area.'
+								' . $button_area . '
 							</table>
 						</td>
 					</tr>
@@ -85,7 +85,7 @@ function sendmail($to, $subject, $title, $content, $button, $link, $token)
 								</tr>
 								<tr>
 									<td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;line-height: 2;" width="75%" align="center">
-										<strong>Copyright &copy; '.date("Y").' ClinicMe. All right reserved</strong><br/>
+										<strong>Copyright &copy; ' . date("Y") . ' ClinicMe. All right reserved</strong><br/>
 										For questions about this list, please contact
 										<a href="#" style="color: #ffffff;">clinicme@gmail.com</a>
 									</td>
@@ -103,8 +103,8 @@ function sendmail($to, $subject, $title, $content, $button, $link, $token)
 
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-	$headers .= 'From: <ushotel97@gmail.com>' . "\r\n";
-	$headers .= 'Cc: ushotel97@gmail.com' . "\r\n";
+	$headers .= 'From: <nayak.harisankar12@gmail.com>' . "\r\n";
+	$headers .= 'Cc: nayak.harisankar12@gmail.com' . "\r\n";
 	mail($to, $subject, $message, $headers);
 	return true;
 }

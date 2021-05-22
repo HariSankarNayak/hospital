@@ -40,7 +40,8 @@ $error_html = array(
 	'errState' => '<div class="invalid-feedback">State is required.</div>',
 	'errZipcode' => '<div class="invalid-feedback">Zipcode is required.</div>',
 	'errFee' => '<div class="invalid-feedback">Fees is required.</div>',
-
+	'errPassword' => '<div class="invalid-feedback">Password is required.</div>',
+	'errConfirmPassword' => '<div class="invalid-feedback">Must match with password entered.</div>',
 	'errField' => '<div class="invalid-feedback">This Field is Required.</div>',
 	'invalidEmail' => '<div class="invalid-feedback">Invalid Email Format</div>',
 	'invalidURL' => '<div class="invalid-feedback">Invalid URL Format. Please include http:// || https://</div>',
