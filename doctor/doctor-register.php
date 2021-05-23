@@ -163,12 +163,12 @@ ob_start();
                                 var street = document.getElementById("inputAddress").value;
                                 var city = document.getElementById("inputCity").value;
                                 var state = document.getElementById("inputState").value;
-                                var country = "Malaysia";
+                                var country = "India";
                                 var zipcode = document.getElementById("inputZipCode").value;
                                 var address = ""+city+" "+state+" "+country+"";
                                 var q = encodeURIComponent(address);
                                 //var url = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAGx-OjyNn10KsJ_OsE7cl2_qxg6mNBZyI&q="+city+","+state+"+"+country+"';
-                                document.getElementById("map").innerHTML = "<iframe width='100%' height='450' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAGx-OjyNn10KsJ_OsE7cl2_qxg6mNBZyI&q="+street+","+city+","+state+","+zipcode+"+Malaysia' allowfullscreen></iframe>";
+                                document.getElementById("map").innerHTML = "<iframe width='100%' height='450' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAGx-OjyNn10KsJ_OsE7cl2_qxg6mNBZyI&q="+street+","+city+","+state+","+zipcode+"+India' allowfullscreen></iframe>";
                             }
                         </script>
                         <div id="map"></div>

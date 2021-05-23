@@ -86,7 +86,7 @@ include('../helper/select_helper.php');
                 <div class="card">
                     <div class="card-body">
                         <p class="mb-2"><i class="fas fa-map-marker-alt fa-fw"></i> <?php echo $clinic_row["clinic_address"].', '.$clinic_row["clinic_state"].', '.$clinic_row["clinic_zipcode"].', '.$clinic_row["clinic_city"] ?></p>
-                        <iframe width='100%' height='300' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAGx-OjyNn10KsJ_OsE7cl2_qxg6mNBZyI&q="<?= $clinic_row['clinic_address'] ?>+","+<?= $clinic_row['clinic_city'] ?>+","+<?= $clinic_row['clinic_state'] ?>+","+<?= $clinic_row['clinic_zipcode'] ?>+"+Malaysia' allowfullscreen></iframe>
+                        <iframe width='100%' height='300' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAGx-OjyNn10KsJ_OsE7cl2_qxg6mNBZyI&q="<?= $clinic_row['clinic_address'] ?>+","+<?= $clinic_row['clinic_city'] ?>+","+<?= $clinic_row['clinic_state'] ?>+","+<?= $clinic_row['clinic_zipcode'] ?>+"+India' allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

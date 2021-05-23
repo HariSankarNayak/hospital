@@ -111,7 +111,7 @@ $row = mysqli_fetch_assoc($result);
                 <div class="card">
                     <div class="card-body">
                     <p class="mb-2"><i class="fas fa-map-marker-alt fa-fw"></i> <?php echo $row["clinic_address"].', '.$row["clinic_state"].', '.$row["clinic_zipcode"].', '.$row["clinic_city"] ?></p>
-                        <iframe width='100%' height='300' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAGx-OjyNn10KsJ_OsE7cl2_qxg6mNBZyI&q="<?= $row['clinic_address'] ?>+","+<?= $row['clinic_city'] ?>+","+<?= $row['clinic_state'] ?>+","+<?= $row['clinic_zipcode'] ?>+"+Malaysia' allowfullscreen></iframe>
+                        <iframe width='100%' height='300' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAGx-OjyNn10KsJ_OsE7cl2_qxg6mNBZyI&q="<?= $row['clinic_address'] ?>+","+<?= $row['clinic_city'] ?>+","+<?= $row['clinic_state'] ?>+","+<?= $row['clinic_zipcode'] ?>+"+India' allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

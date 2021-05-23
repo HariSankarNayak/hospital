@@ -195,7 +195,7 @@ $select_lang = array("Abkhazian",
 /*
  * State
  * 
- * Malaysia
+ * India
  */
 $select_state = array(
     "Andhra Pradesh",
@@ -240,7 +240,7 @@ $select_state = array(
  * Nationality
  */
 $select_nationality = array(
-    "Malaysia",
+    "India",
     "Singapore",
     "Afghan",
     "Albanian",

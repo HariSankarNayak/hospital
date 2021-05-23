@@ -4,19 +4,21 @@ include('./includes/path.inc.php');
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<?php include CSS_PATH; ?>
 	<link rel="stylesheet" href="../assets/css/clinic/login.css">
 </head>
+
 <body>
 	<div class="container">
 		<div class="login-wrap mx-auto">
 			<div class="login-head">
-				<h4><?php echo $BRAND_NAME;?></h4>
+				<h4><?php echo $BRAND_NAME; ?></h4>
 				<p>Hello there, Sign into your Account!</p>
 			</div>
 			<div class="login-body">
-				<form name="login_form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+				<form name="login_form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
 						<input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
@@ -43,32 +45,50 @@ include('./includes/path.inc.php');
 </html>
 <?php
 if (isset($_POST['loginbtn'])) {
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
 	$inputEmail = $conn->real_escape_string($_POST['email']);
-	
-	$check = $conn->prepare("SELECT * FROM doctors WHERE doctor_email = ".$inputEmail);
-    // $check->bind_param("s", $inputEmail);
-	
-    $check->execute();
-	
-    $q = $check->get_result();
-	
-    $r = $q->fetch_assoc();
-    if (mysqli_num_rows($q) != 1) {
-		echo "<script>Swal.fire({title: 'Error!', text: 'Email & Password Not Exist', type: 'error', confirmButtonText: 'Try Again'})</script>";
+	$check = $conn->prepare("SELECT * FROM doctors WHERE doctor_email = ?");
+
+
+	$check->bind_param("s", $inputEmail);
+
+	$check->execute();
+
+
+
+	$q = $check->get_result();
+
+	$r = $q->fetch_assoc();
+	if (mysqli_num_rows($q) != 1) {
+		echo "<script>Swal.fire({title: 'Error!', text: 'Email & Password Not Exist1', type: 'error', confirmButtonText: 'Try Again'})</script>";
 		exit();
 	} else {
-        $token = $r["doctor_token"];
+		$token = $r["doctor_token"];
 	}
-	
+
 	$inputPassword = $conn->real_escape_string(encrypt(md5($_POST['password']), $token));
+
 
 	try {
 
-		$stmt = $conn->prepare("SELECT * FROM doctors WHERE doctor_email = ? AND doctor_password = ?");
-		$stmt->bind_param("ss", $inputEmail, $inputPassword);
+		// $stmt = $conn->prepare("SELECT * FROM doctors WHERE doctor_email = ? AND doctor_password = ?");
+		// $stmt->bind_param("ss", $inputEmail, $inputPassword);
+		// $stmt->execute();
+		// $result = $stmt->get_result();
+		// $row = $result->fetch_assoc();
+
+		$stmt = $conn->prepare("SELECT * FROM doctors WHERE doctor_email = ? ");
+		$stmt->bind_param("s", $inputEmail);
 		$stmt->execute();
 		$result = $stmt->get_result();
+
 		$row = $result->fetch_assoc();
+		print_r($row);exit;
+	
+	
+	
 
 		if ($inputEmail == "" && empty($inputEmail)) {
 			echo "<script>Swal.fire({title: 'Error!', text: 'Please Enter a Email', type: 'error'}).then(function() { $('#inputEmail').focus(); });</script>";
@@ -90,9 +110,9 @@ if (isset($_POST['loginbtn'])) {
 			header("Location: index.php");
 		}
 	} catch (Exception $error) {
-		die('There was an error running the query ['.$conn->error.']');
+		die('There was an error running the query [' . $conn->error . ']');
 	}
-	
+
 	$stmt->close();
 	$conn->close();
 }
