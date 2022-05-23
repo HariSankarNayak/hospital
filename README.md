@@ -4,7 +4,7 @@
 
 [TOC]
 
-ClinicME will involve two platforms which are mobile application and web based. For the mobile application based will use Ionic framework developed to let patient to book an appointment by anywhere in anytime. In web based, the system will use HTML, CSS, Javascript, PHP and MySQL developed to let clinic administrator and doctor to manage the appointment and update the clinic and doctor information.
+This Project will involve two platforms which are mobile application and web based. For the mobile application based will use Ionic framework developed to let patient to book an appointment by anywhere in anytime. In web based, the system will use HTML, CSS, Javascript, PHP and MySQL developed to let clinic administrator and doctor to manage the appointment and update the clinic and doctor information.
 
 ## Purpose
 Aim at developing the clinic appointment apps to provide patients with a convenient way to make clinic appointment. This can minimise the hassle of patients having long queue in seeking consultation with the doctor and less interruption for clinic administrative officer during the peak hour. Besides that, a patient no longer needs to walk in and make a call to book an appointment. Thus, it brings convenience to patients.
